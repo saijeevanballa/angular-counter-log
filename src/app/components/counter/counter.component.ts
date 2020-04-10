@@ -6,8 +6,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./counter.component.css"]
 })
 export class CounterComponent {
-  public count = 0
+  public count = 0;
   constructor() {}
   onAdd = () => ++this.count;
-  onSub = () => --this.count;
+  onSub = () => {
+    this.count = this.count == 0 ? 0: --this.count;
+  };
 }
